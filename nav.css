@@ -1,23 +1,44 @@
 body {
-    background-color: white;
+  background-color: white;
 }
 nav {
-    background-color: #008348;
-    text-align: center;
-    color:  white;
-    font-family: Helvetica, sans-serif;
-    font-variant: small-caps;
+  background-color: #008348;
+  text-align: center;
+  color: white;
+  font-family: sans-serif;
+  font-variant: small-caps;
+  height: 90px;
+  font-size: 18pt;
 }
 nav ul {
-    list-style-type: none;
-    text-align: center;
-  }
+  list-style-type: none;
+  text-align: center;
+  margin-right: 700px;
+}
 nav li {
-    display: inline-block;
-    padding-left: 20px;
-    color: white;
-  }
+  display: inline-block;
+  padding-top: 10px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  color: white;
+}
 nav a {
-    color: white;
-    text-decoration-line: none;
+  color: white;
+  text-decoration-line: none;
+  padding: 1px;
+}
+nav a:hover {
+    background-color: white;
+    color: #008348;
+    transition: .2s;
+    padding: 1px;
+    border-radius: 2px;
+}
+
+#celtics-logo {
+  height: 70px;
+  float: left;
+  margin-left: 200px;
+  margin-top: 10px;
 }
