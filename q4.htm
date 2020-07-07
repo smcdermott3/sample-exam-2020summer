@@ -47,9 +47,9 @@
       through ten is their pip value (2 through 10). Face cards (Jack, Queen, and King) are all worth ten. To simplify
       this game, Ace is worth one. </p>
     <div class="question-second">
-      <img alt="card-1" height="100" src="images/green_back.png">
-      <img alt="card-2" height="100" src="images/green_back.png">
-      <img alt="card-3" height="100" src="images/green_back.png">
+      <img id="card-1" height="100" src="images/green_back.png">
+      <img id="card-2" height="100" src="images/green_back.png">
+      <img id="card-3" height="100" src="images/green_back.png">
       <p id="result">You are Not Busted.</p>
       <button>Hit</button>
     </div>
@@ -63,28 +63,33 @@
 const shapes = ['C', 'D', 'H', 'S'];
 const values = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
 
-function hit() {
+function shuffle() {
         let sum = 0;
-        for (let i = 1; i <= 3; i++) {
-          let r1 = Math.floor(Math.random() * 13);
-          const r2 = Math.floor(Math.random() * 4);
-          const cardValues = values[r1];
-          const cardShapes = shapes[r2];
-          document.getElementById('card-' + i).src = "images/" + cardValues + cardShapes + ".png";
+        for (let i = 1; i <= 3 ; i++) { // 3 because 3 cards
+          const r1 = Math.floor(Math.random() * 13); //rand 1 
+          const r4 = Math.floor(Math.random() * 4); // rand 4  
+          const cardValues = values[r1]; //rand1 meets values
+          const cardShapes = shapes[r4]; // rand4 meets shapes
+          document.getElementById('card-' + i).src = "images/cards/" + cardValues + cardShapes + ".png";
+          //get cards, images + value + shape .png, string together all
           if (r1 > 9) {
-            r1 = 9;
+            r1 = 10;
           }
+          // if r1 array is more than 10, then the values are 10
           sum += r1 + 1;
           console.log(sum);
+
         }
         if (sum > 21) {
           document.getElementById("result").innerHTML = "You are Busted!";
+          // if sum is more than 21, you are busted
         } else {
           document.getElementById("result").innerHTML = "You are Not Busted!";
         }
+        // if no above 21, not busted
       }
 
-      document.querySelector('button').onclick = hit;
+      document.querySelector('button').onclick = shuffle;
 </script>
 
   
