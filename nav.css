@@ -83,3 +83,31 @@ tr:hover {
   text-align: center;
   width: 300px;
 }
+h1 {
+    text-align: center;
+    font-family: sans-serif;
+}
+p {
+    font-family: sans-serif;
+}
+#question-body {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+    padding-left: 300px;
+    padding-right: 300px;
+}
+.red {
+    color: red;
+}
+#number {
+    text-align: center;
+    font-size: 30pt;
+}
+button {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
