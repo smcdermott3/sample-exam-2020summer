@@ -29,11 +29,11 @@ nav a {
   padding: 1px;
 }
 nav a:hover {
-    background-color: white;
-    color: #008348;
-    transition: .2s;
-    padding: 1px;
-    border-radius: 2px;
+  background-color: white;
+  color: #008348;
+  transition: 0.3s;
+  padding: 1px;
+  border-radius: 4px;
 }
 
 #celtics-logo {
@@ -41,4 +41,45 @@ nav a:hover {
   float: left;
   margin-left: 200px;
   margin-top: 10px;
+}
+table {
+  border: #ececec 1px solid;
+  font-family: sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+}
+
+td {
+  height: 150px;
+}
+tr:hover {
+  background-color: #ececec;
+}
+/* advanced selector above */
+
+.logo_in_table {
+  height: 60px;
+}
+#table_desc p {
+  text-align: center;
+  margin: 0px;
+  font-size: 10px;
+}
+.date {
+  background-color: #e1ece4;
+  width: 150px;
+  text-align: center;
+}
+.date p {
+  margin: -2px;
+  font-size: 10px;
+}
+.date .bigtext {
+  font-size: 22px;
+}
+.score {
+  font-size: 22px;
+  text-align: center;
+  width: 300px;
 }
