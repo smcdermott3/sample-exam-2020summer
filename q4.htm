@@ -5,6 +5,8 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
   <link rel="stylesheet" href="nav.css">
+  <link rel="stylesheet" href="instructions.css">
+
   <title>WebTech Exam - Q4</title>
 
 </head>
@@ -50,49 +52,66 @@
       <img id="card-1" height="100" src="images/green_back.png">
       <img id="card-2" height="100" src="images/green_back.png">
       <img id="card-3" height="100" src="images/green_back.png">
-      <p id="result">You are Not Busted.</p>
-      <button>Hit</button>
+      <p id="result">Hit Me!</p>
+      <button>New Hand</button>
     </div>
   </div>
 
 
 
 
-<script>
+  <script>
+    const shapes = ["C", "D", "H", "S"];
+    const values = [
+      "A",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "J",
+      "Q",
+      "K",
+    ];
 
-const shapes = ['C', 'D', 'H', 'S'];
-const values = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
+    const result = document.getElementById("result");
+    // where to display result, busted or not
 
-function shuffle() {
-        let sum = 0;
-        for (let i = 1; i <= 3 ; i++) { // 3 because 3 cards
-          const r1 = Math.floor(Math.random() * 13); //rand1 
-          const r2 = Math.floor(Math.random() * 4); // rand2  
-          const cardValues = values[r1]; //rand1 meets values
-          const cardShapes = shapes[r2]; // rand4 meets shapes
-          document.getElementById('card-' + i).src = "images/cards/" + cardValues + cardShapes + ".png";
-          //get cards, images + value + shape .png, string together all
-          if (r1 > 9) {
-            r1 = 10;
-          }
-          // if r1 array is more than 10, then the values are 10
-          sum += r1 + 1;
-          console.log(sum);
-
+    function shuffle() {
+      let sum = 0;
+      for (let i = 1; i <= 3; i++) {
+        // 3 cards, thus   i<=3
+        let r1 = Math.floor(Math.random() * 13);
+        // rand 13 values
+        let r2 = Math.floor(Math.random() * 4);
+        // rand 4 suits
+        let v = values[r1];
+        // randomize the values 
+        let s = shapes[r2];
+        // randomize the shapes
+        document.getElementById("card-" + i).src = "images/cards/" + v + s + ".png";
+        if (r1 > 9) {
+          // cards above array 9, really 10 are valued as...
+          r1 = 9;
+          // ...are valued as array 9, really 10
         }
-        if (sum > 21) {
-          document.getElementById("result").innerHTML = "You are Busted!";
-          // if sum is more than 21, you are busted
-        } else {
-          document.getElementById("result").innerHTML = "You are Not Busted!";
-        }
-        // if no above 21, not busted
+        sum += r1 + 1;
+        console.log(sum);
       }
-      // TODO: the values are not assigned properly
-
-      document.querySelector('button').onclick = shuffle;
-</script>
-
+      if (sum > 21) {
+        result.innerHTML = "You are Busted!";
+        result.style.color = "red";
+      } else {
+        result.innerHTML = "You are Not Busted!";
+        result.style.color = "#008348";
+      }
+    }
+    document.querySelector("button").onclick = shuffle;
+  </script>
   
 </body>
 </html>
