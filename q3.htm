@@ -6,6 +6,8 @@
     <meta content="ie=edge" http-equiv="X-UA-Compatible" />
     <title>WebTech Exam - Q3</title>
     <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="instructions.css">
+
   </head>
   <body>
     
@@ -60,29 +62,32 @@
 
 <script>
 
-  let counter = 10;
-  const timer = document.getElementById("number");
-  const countdownNumbers = [0,1,2,3,4,5,6,7,8,9,10];
-  let finished = 0;
+let n = 10;
+// start at ten
+      const number = document.getElementById("number");
+      // what is displaying the countdown?
 
-function countdown() {
-     
-  for (let i = 0; i < countdownNumbers.length; i++) {
-    const element = countdownNumbers[i];       
-  }
-  if (finished === false) {
-          console.log(counter);
-          counter = counter - 1;
-          setTimeout(countdown, 1000);
+      function countdown() {
+        number.innerHTML = n;
+        // number shall be displayed by "n"
+        number.style.color = "black";
+        // the style of the number is black
+
+        if (n == 0) {
+          n = 11;
+          // 11 cycles - 0-10
+          number.style.color = "red";
+          // if n is equal to 0, red
         }
-  if (finished === true) {
-        timer.style.color = "red"; 
-  }
+        n--;
+        // incrementally down
+        setTimeout(countdown, 1000);
+        // countdown by 1000 milliseconds, 1 second
+        console.log(n + +1)
 
-       
-       
       }
-document.getElementById("start-time").onclick = countdown
+
+      document.getElementById("start-time").onclick = countdown;
 
 </script>
 
